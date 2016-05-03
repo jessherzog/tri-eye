@@ -2,7 +2,6 @@
 #include <string>
 
 // initialize the objects we will use
-ofTrueTypeFont myfont;
 ofFbo fbo;
 ofVideoPlayer mov0;
 ofSerial serial;
@@ -23,10 +22,10 @@ void testApp::setup(){
   avX = midX;
 		avX2 = midX;
   avatarY = midY;
-
-  // setup font
-  myfont.loadFont("Webdings.ttf", 12);
-  
+	
+		// setup font
+		windy.load("OratorStd-Slanted.otf", 100);
+	
   // setup image
 		img0.load("lashL.png");
 		img1.load("lashR.png");
@@ -60,10 +59,6 @@ int parseInt (string del, string str) {
 // update all the variables and data in the program!
 void testApp::update(){
 
-//  for (int i = 0; i < numNPPoints; i++) { // update all the points
-//    NPPUpdate(i);
-//  }
-//  
   mov0.update();
 
 #if 0
@@ -138,11 +133,15 @@ void testApp::draw(){
   ofColor in = ofColor(0,0,0);
   ofBackgroundGradient(in, out, OF_GRADIENT_CIRCULAR);
 
-	mov0.draw(50, 150);
-	img0.draw(-150, 100);
-	mov0.draw(670, 150);
-	img1.draw(650, 100);
+		mov0.draw(50, 150);
+		img0.draw(-150, 100);
+		mov0.draw(670, 150);
+		img1.draw(650, 100);
 	
-	eyes();
+		eyes();
+	
+		// text
+		windy.drawString("5&*^%%*#)874920", 0, 120);
+	
 }
 

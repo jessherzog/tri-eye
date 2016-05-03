@@ -14,4 +14,6 @@ class testApp : public ofBaseApp{
 		void draw();
 		void mouseMoved(int x, int y);
         ofSoundPlayer backgroundMusic;
+    
+    ofTrueTypeFont windy;
 };
